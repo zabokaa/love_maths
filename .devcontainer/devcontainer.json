@@ -31,7 +31,8 @@
            "**/.vscode":true,
            "**/core.Microsoft*":true,
            "**/core.mongo*":true,
-           "**/core.python*":true
+           "**/core.python*":true,
+           "emmet.triggerExpansionOnTab": true
         },
         "editor.defaultFormatter":"esbenp.prettier-vscode",
         "python.linting.pycodestyleEnabled":true,
