@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
             }
-        })
+        });
     }
 
     runGame("addition");
-})
+});
 
 /**
  * JSDOC Comment: create with "/**" // it will be displayed while hovering over the following code !!
@@ -60,10 +60,10 @@ function checkAnswer() {
         alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
     }
 
-    runGame(calculatedAnswer[1]);
+    runGame(calculatedAnswer[1]);  //to run another game
 }
 
-f/**
+/**
  * Gets the operands (the numbers) and the operator (plus, minus etc)
  * directly from the dom, and returns the correct answer.
  */
@@ -93,9 +93,11 @@ function incrementWrongAnswer() {
 
 // ?? why are the parameters calles operand1, operand2 and not num1 and num2 ??
 function displayAdditionQuestion(operand1, operand2) {
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
-    document.getElementById("operator").textContent = "+";
+
+    document.getElementById('operand1').textContent = operand1;
+    document.getElementById('operand2').textContent = operand2;
+    document.getElementById('operator').textContent = "+";
+    
 }
 
 function displaySubtractQuestion() {
