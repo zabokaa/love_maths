@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("You clicked submit!");
             } else {
                 let gameType = this.getAttribute("data-type");
-                alert(`You clicked ${gameType}`);  //backquote !!
+                runGame(gameType);
             }
         })
     }
@@ -25,10 +25,19 @@ document.addEventListener("DOMContentLoaded", function() {
  * JSDOC Comment: create with "/**" // it will be displayed while hovering over the following code !!
  * The main game loop will be called after the users anser has been processed
  */
-function runGame() {
+function runGame(gameType) {
     // creates random numbers between 0 - 25
     let num1 = Math.floor(Math.random() * 25) = 1;
     let num2 = Math.floor(Math.random() * 25) = 1;
+
+    if (gameType === "addition") {
+        displayAdditionQuestion(num1, num2);
+    } else {
+        // always inform user if sth is going wrong
+        alert(`Unknown Game Type: ${gameType}`);  //backquote !!
+        // will stop the game from running and will print it to console for debugging !
+        throw `Unknown game type ${gameType} ! Aborting !`;
+    }
 }
 
 function checkAnswer() {
@@ -47,8 +56,11 @@ function incrementWrongAnswer() {
 
 }
 
-function displayAdditionQuestion() {
-
+// ?? why are the parameters calles operand1, operand2 and not num1 and num2 ??
+function displayAdditionQuestion(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "+";
 }
 
 function displaySubtractQuestion() {
