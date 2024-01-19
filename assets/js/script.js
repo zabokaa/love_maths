@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
  * The main game loop will be called after the users anser has been processed
  */
 function runGame(gameType) {
+    // so users do not have to delete their previous answer = setting value to empty string:
+    document.getElementById("answer-box").value = "";
     // creates random numbers between 0 - 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
