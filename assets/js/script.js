@@ -1,7 +1,7 @@
 
 // wait for DOM to finish loading before running the game 
 document.addEventListener("DOMContentLoaded", function() {
-    // event listeners
+    // event listeners and event handler
     // getting all buttons as an array:
     let buttons = document.getElementsByTagName("button");
 // iterate through array
@@ -20,10 +20,15 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 })
-// event handler
 
+/**
+ * JSDOC COmment: create with "/**"
+ * 
+ */
 function runGame() {
-
+    // creates random numbers between 0 - 25
+    let num1 = Math.floor(Math.random() * 25) = 1;
+    let num2 = Math.floor(Math.random() * 25) = 1;
 }
 
 function checkAnswer() {
