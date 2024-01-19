@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             // this = referring to specific button that is clicked and checking the data-type of it
             if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked submit!");
+                // alert("You clicked submit!");
+                // NOW check if answer is correct:
+                checkAnswer(); //needs no parameters
             } else {
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
@@ -42,8 +44,23 @@ function runGame(gameType) {
     }
 }
 
+/**
+ * Checks the answer agaist the first element in
+ * the returned calculateCorrectAnswer array
+ */
 function checkAnswer() {
+    // REMEMBER: it is an easy way to check first in DevTools console
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calculateCorrectAnswer();   //this is an array !! [correctAnswer, gameType]
+    let isCorrect = userAnswer === calculatedAnswer[0];
 
+    if (isCorrect) {
+        alert("Hey! You got it right! :D");
+    } else {
+        alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+    }
+
+    runGame(calculatedAnswer[1]);
 }
 
 f/**
@@ -51,7 +68,7 @@ f/**
  * directly from the dom, and returns the correct answer.
  */
 function calculateCorrectAnswer() {
-
+    // we need parseInt to get numbers, bc by default variabls called for the dom are string !!!
     let operand1 = parseInt(document.getElementById('operand1').innerText);
     let operand2 = parseInt(document.getElementById('operand2').innerText);
     let operator = document.getElementById("operator").innerText;
