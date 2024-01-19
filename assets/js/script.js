@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 /**
- * JSDOC COmment: create with "/**"
- * 
+ * JSDOC Comment: create with "/**" // it will be displayed while hovering over the following code !!
+ * The main game loop will be called after the users anser has been processed
  */
 function runGame() {
     // creates random numbers between 0 - 25
