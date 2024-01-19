@@ -22,9 +22,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // for users who wnat to use the enter key instead of the submit button:
+    document.getElementById("answer-box").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    });
+    
     runGame("addition");
-    runGame("multiply");
-    runGame("subtract");
 });
 
 /**
